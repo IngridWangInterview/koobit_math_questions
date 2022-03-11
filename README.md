@@ -48,10 +48,6 @@ Based on Font Awesome 5.15.4. Includes all free icons:
 
 Freezed, yet another code generator for unions/pattern-matching/copy.
 
-#### [freezed](https://pub.dev/packages/freezed)
-
-Freezed, yet another code generator for unions/pattern-matching/copy.
-
 #### [logger](https://pub.dev/packages/logger)
 
 Small, easy to use and extensible logger which prints beautiful logs. Inspired
