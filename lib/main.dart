@@ -1,49 +1,40 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:koobit_math_questions/screens/question_page/question_page.dart';
+import 'core/quiz_service.dart';
+
 void main() {
-  runApp(const KooBitsMathQuestionsApp());
+  final service = QuizService();
+
+  runApp(KooBitsMathQuestionsApp(service: service));
 }
 
 class KooBitsMathQuestionsApp extends StatelessWidget {
-  const KooBitsMathQuestionsApp({Key? key}) : super(key: key);
+  final QuizService service;
+
+  const KooBitsMathQuestionsApp({
+    Key? key,
+    required this.service,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'KooBit Math Questions'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-            Text(
-              'Hello world!',
-            ),
-          ],
+    return RepositoryProvider<QuizService>(
+      create: (context) => service,
+      child: MaterialApp(
+        title: 'KooBit Math Questions',
+        theme: ThemeData(
+          primarySwatch: Colors.yellow,
         ),
+        home: const QuestionsPage(title: 'KooBit Math Questions'),
+        builder: (context, child) {
+          return MediaQuery(
+            // 字的大小不再受到系統影響
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            child: child ?? const SizedBox(),
+          );
+        },
       ),
     );
   }
