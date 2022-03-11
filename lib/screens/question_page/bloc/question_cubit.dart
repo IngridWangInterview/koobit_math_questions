@@ -52,6 +52,9 @@ class QuestionCubit extends Cubit<QuestionState> {
   }
 
   void previousQuestions() {
+    if (state.usrAnswers.length > state.currentQuestionIndex) {
+      state.usrAnswers.removeLast();
+    }
     final p = state.currentQuestionIndex - 1;
     final newState = state.copyWith(currentQuestionIndex: p);
     final answer = newState.getCurrentUsrAnswer()!.answer;
@@ -62,8 +65,8 @@ class QuestionCubit extends Cubit<QuestionState> {
   }
 
   void nextQuestion() {
-    if (state.currentQuestionIndex != 0 &&
-        state.usrAnswers.length > state.currentQuestionIndex) {
+    if (state.usrAnswers.length > state.currentQuestionIndex ||
+        (state.usrAnswers.isNotEmpty && state.currentQuestionIndex == 0)) {
       state.usrAnswers.removeLast();
     }
     final next = state.currentQuestionIndex + 1;
