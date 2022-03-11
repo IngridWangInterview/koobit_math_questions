@@ -67,6 +67,14 @@ class _QuestionsView extends StatelessWidget {
               ],
             );
           case QuestionStatus.loadingQuestions:
+            return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text('載入題目'),
+                    CircularProgressIndicator(),
+                  ],
+                ));
           case QuestionStatus.summiting:
             return Center(
                 child: Column(
