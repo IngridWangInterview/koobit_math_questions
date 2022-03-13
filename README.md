@@ -1,6 +1,9 @@
-# koobit_math_questions
+# math_questions
 
-KooBits Flutter Exercise
+Flutter Exercise - for math question
+
+
+![image](https://github.com/IngridWangInterview/math_questions/blob/master/demo.gif)
 
 ## Before Start
 
