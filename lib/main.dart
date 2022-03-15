@@ -23,14 +23,13 @@ class KooBitsMathQuestionsApp extends StatelessWidget {
     return RepositoryProvider<QuizService>(
       create: (context) => service,
       child: MaterialApp(
-        title: 'KooBit Math Questions',
+        title: 'Math Questions',
         theme: ThemeData(
           primarySwatch: Colors.yellow,
         ),
-        home: const QuestionsPage(title: 'KooBit Math Questions'),
+        home: const QuestionsPage(title: 'Math Questions'),
         builder: (context, child) {
           return MediaQuery(
-            // 字的大小不再受到系統影響
             data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
             child: child ?? const SizedBox(),
           );

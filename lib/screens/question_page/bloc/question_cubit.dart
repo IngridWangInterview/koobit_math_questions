@@ -2,12 +2,12 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:koobit_math_questions/core/quiz_service.dart';
-import 'package:koobit_math_questions/screens/question_page/bloc/question_state.dart';
 
 import '../../../core/models/user_answer/user_answer.dart';
+import '../../../core/quiz_service.dart';
 import '../../../utils/logger.dart';
 import '../models/answer_text_field.dart';
+import 'question_state.dart';
 
 class QuestionCubit extends Cubit<QuestionState> {
   final QuizService _service;

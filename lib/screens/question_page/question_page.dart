@@ -8,21 +8,16 @@ import '../../core/quiz_service.dart';
 import 'bloc/question_cubit.dart';
 import 'bloc/question_state.dart';
 
-class QuestionsPage extends StatefulWidget {
-  const QuestionsPage({Key? key, required this.title}) : super(key: key);
-
+class QuestionsPage extends StatelessWidget {
   final String title;
 
-  @override
-  State<QuestionsPage> createState() => _QuestionsPageState();
-}
+  const QuestionsPage({Key? key, required this.title}) : super(key: key);
 
-class _QuestionsPageState extends State<QuestionsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -69,12 +64,12 @@ class _QuestionsView extends StatelessWidget {
           case QuestionStatus.loadingQuestions:
             return Center(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text('載入題目'),
-                    CircularProgressIndicator(),
-                  ],
-                ));
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text('載入題目'),
+                CircularProgressIndicator(),
+              ],
+            ));
           case QuestionStatus.summiting:
             return Center(
                 child: Column(

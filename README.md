@@ -27,25 +27,9 @@ A simple CLI to manage Flutter SDK versions.
 
 A predictable state management library for Dart.
 
-#### [equatable](https://pub.dev/packages/equatable)
-
-Simplify Equality Comparisons.
-
 #### [auto_size_text](https://pub.dev/packages/auto_size_text)
 
 Flutter widget that automatically resizes text to fit perfectly within its bounds.
-
-#### [font_awesome_flutter](https://pub.dev/packages/auto_size_text)
-
-The Font Awesome Icon pack available as set of Flutter Icons.
-
-Based on Font Awesome 5.15.4. Includes all free icons:
-
-- Regular
-- Solid
-- Brands
-
-[Introduction from Flutter Package of the Week](https://www.youtube.com/watch?v=TOAyjIAsT7o)
 
 #### [freezed](https://pub.dev/packages/freezed)
 
